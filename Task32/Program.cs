@@ -17,7 +17,7 @@ int[] CreateMassivRandom(int sizeMassiv, int min, int max)
 void PrintMassiv(int[] array)
 {
     Console.Write("[");
-   
+
     for (int i = 0; i < array.Length; i++)
     {
         if (i < array.Length - 1) Console.Write($"{array[i]}, ");
@@ -27,19 +27,15 @@ void PrintMassiv(int[] array)
     Console.WriteLine("]");
 }
 
-void PrintMassivNegetive(int[] array)
+void MassivNegetive(int[] array)
 {
-    Console.Write("[");
-   
     for (int i = 0; i < array.Length; i++)
     {
-        if (i < array.Length - 1) Console.Write($"{array[i]*-1}, ");
-        else Console.Write($"{array[i]*-1}");
+        array[i] *= -1;
     }
-
-    Console.WriteLine("]");
 }
 
 int[] list = CreateMassivRandom(Massiv, -9, 9);
 PrintMassiv(list);
-PrintMassivNegetive(list);
+MassivNegetive(list);
+PrintMassiv(list);

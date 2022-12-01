@@ -7,7 +7,7 @@ double[] CreateMassivRandom(int sizeMassiv)
 
     for (int i = 0; i < arr.Length; i++)
     {
-        arr[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
+        arr[i] = Convert.ToDouble(new Random().Next(100, 1000)) / 100;
     }
 
     return arr;
@@ -28,15 +28,15 @@ void PrintMassiv(double[] array)
 
 void MaxMinNumber(double[] arr)
 {
-    double min = arr[0];
-    double max = arr[0];
-
+    double min = arr[0]; // так-же можно использовать min = ToInt32.MaxValue
+    double max = arr[0]; // так-же можно использовать max = ToInt32.MinValue
 
     for (int i = 0; i < arr.Length; i++)
     {
         if (arr[i] > max) max = arr[i];
-        if (arr[i] < min) min = arr[i]; 
+        if (arr[i] < min) min = arr[i];
     }
+
     Console.WriteLine($"Максимальное значение -> {max}");
     Console.WriteLine($"Минимальное значение -> {min}");
     Console.WriteLine($"Разница между максимальным и минимальным значениями -> {max - min}");
