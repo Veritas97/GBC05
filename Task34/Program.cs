@@ -27,19 +27,19 @@ void PrintMassiv(int[] array)
     Console.WriteLine("]");
 }
 
-int[] list = CreateMassivRandom(Massiv, -9, 9);
-PrintMassiv(list);
-
-bool FindNumbInMassiv(int[] array, int num)
+int FindElements(int[] array)
 {
+    int count = 0;
+
     for (int i = 0; i < array.Length; i++)
     {
-        if(array[i]== num) return true;
+        if (array[i] > 9 && array[i] < 100) count ++;
     }
-    return false;
+    return count;
 }
 
-Console.Write("Введиде число которое ищем: ");
-int number = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Заданное число присутствует в массиве?");
-Console.WriteLine(FindNumbInMassiv(list, number) ? "Да, присутствует" : "Нет, не присутствует");
+int[] list = CreateMassivRandom(Massiv, 0, 1000);
+PrintMassiv(list);
+int FindCount = FindElements(list);
+if (FindCount > 0) Console.WriteLine($"Колличество двухзначных элементом = {FindCount}");
+else Console.WriteLine("В данном массиве нет двухзначных элементом");
